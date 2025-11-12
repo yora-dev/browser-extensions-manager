@@ -1,0 +1,121 @@
+:root {
+  /* Background Colors */
+  --body-bg: hsl(227, 75%, 14%);
+  --card-bg: hsl(226, 25%, 17%);
+  --theme-bg: hsl(225, 23%, 24%);
+  --radio-bg: hsl(226, 11%, 37%);
+  /* Typhography Colors */
+  --border-color: hsl(0, 0%, 78%);
+  --card-body: hsl(217, 61%, 90%);
+  --card-header: hsl(0, 0%, 93%);
+  /* --card-bg: hsl(200, 60%, 99%); */
+
+  --active-radio: hsl(3, 86%, 64%);
+  --filter-bg: hsl(3, 71%, 56%);
+
+  --Light-Gradient: linear-gradient(180deg, #ebf2fc, #eef8f9);
+  --Dark-Gradient: linear-gradient(180deg, #040918, #091540);
+}
+
+:root[data-theme="dark"] {
+  /* Background Colors */
+  --radio-bg: hsl(0, 0%, 78%);
+  --body-bg-light: hsl(217, 61%, 90%);
+  --theme-bg: hsl(0, 0%, 93%);
+  --card-bg: hsl(200, 60%, 99%);
+  /* Typhography Colors */
+
+  --card-header: hsl(227, 75%, 14%);
+  --card-body: hsl(226, 25%, 17%);
+  --border-color: hsl(0, 0%, 78%);
+
+  --active-radio: hsl(3, 77%, 44%);
+  --filter-bg: hsl(3, 71%, 56%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+}
+
+body {
+  background-color: var(--body-bg);
+}
+
+/* Toggle container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  padding: 5px;
+}
+
+/* Hide default checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--theme-bg); /* red when off */
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+/* Circle */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+/* Checked state */
+input:checked + .slider {
+  background-color: var(--active-radio); /* green when on */
+}
+
+/* Move circle to right when on */
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Smaller toggle */
+.switch {
+  width: 44px;
+  height: 28px;
+}
+
+/* adjust slider rounding to match new height */
+.slider {
+  border-radius: 28px;
+}
+
+/* smaller circle */
+.slider:before {
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+}
+
+/* move circle appropriately when checked */
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
