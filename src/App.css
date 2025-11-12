@@ -1,8 +1,8 @@
 :root {
   /* Background Colors */
   --body-bg: hsl(227, 75%, 14%);
-  --card-bg: hsl(226, 25%, 17%);
-  --theme-bg: hsl(225, 23%, 24%);
+  --card-bg: hsl(226, 20%, 25%);
+  --theme-bg: hsl(225, 4%, 44%);
   --radio-bg: hsl(226, 11%, 37%);
   /* Typhography Colors */
   --border-color: hsl(0, 0%, 78%);
@@ -40,17 +40,28 @@
   font-family: "Noto Sans", sans-serif;
 }
 
-body {
-  background-color: var(--body-bg);
+html {
+  font-size: 62.5%;
 }
 
-/* Toggle container */
+body {
+  background-color: var(--body-bg);
+  padding: 2rem 2rem;
+}
+
+/* Toggle container (single consistent size) */
+:root {
+  --switch-width: 44px;
+  --switch-height: 24px;
+  --switch-padding: 4px;
+  --knob-size: calc(var(--switch-height) - (var(--switch-padding) * 2));
+}
+
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
-  padding: 5px;
+  width: var(--switch-width);
+  height: var(--switch-height);
 }
 
 /* Hide default checkbox */
@@ -60,7 +71,7 @@ body {
   height: 0;
 }
 
-/* Slider */
+/* Slider background */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -68,54 +79,74 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--theme-bg); /* red when off */
-  transition: 0.4s;
-  border-radius: 34px;
+  background-color: var(--theme-bg);
+  transition: 0.25s;
+  border-radius: 999px; /* pill shape */
 }
 
-/* Circle */
+/* Knob */
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
+  height: var(--knob-size);
+  width: var(--knob-size);
+  left: var(--switch-padding);
+  bottom: var(--switch-padding);
   background-color: white;
-  transition: 0.4s;
+  transition: 0.25s;
   border-radius: 50%;
 }
 
-/* Checked state */
+/* Checked state - background */
 input:checked + .slider {
-  background-color: var(--active-radio); /* green when on */
+  background-color: var(--active-radio);
 }
 
-/* Move circle to right when on */
+/* Move knob to right when checked */
 input:checked + .slider:before {
-  transform: translateX(26px);
+  transform: translateX(
+    calc(var(--switch-width) - var(--knob-size) - (var(--switch-padding) * 2))
+  );
+}
+.extension-card {
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 2rem;
+  background-color: var(--card-bg);
+  margin-bottom: 2rem;
 }
 
-/* Smaller toggle */
-.switch {
-  width: 44px;
-  height: 28px;
+.top-part {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
 }
 
-/* adjust slider rounding to match new height */
-.slider {
-  border-radius: 28px;
+.extension-header {
+  font-size: 2.2rem;
+  color: var(--card-header);
+  margin-bottom: 0.5rem;
 }
 
-/* smaller circle */
-.slider:before {
-  height: 20px;
-  width: 20px;
-  left: 4px;
-  bottom: 4px;
+.extesion-description {
+  font-size: 1.6rem;
+  color: var(--card-body);
 }
 
-/* move circle appropriately when checked */
-input:checked + .slider:before {
-  transform: translateX(20px);
+.bottom-part {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+
+.remove-btn {
+  background-color: transparent;
+  padding: 0.6rem 1.2rem;
+  border-radius: 45rem;
+  font-size: 1.5rem;
+  color: var(--card-body);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
 }
