@@ -114,7 +114,7 @@ input:checked + .slider:before {
   );
 }
 .extension-card {
-  padding: 1rem;
+  padding: 2rem;
   border: 1px solid var(--border-color);
   border-radius: 2rem;
   background-color: var(--card-bg);
@@ -205,4 +205,32 @@ input:checked + .slider:before {
 .active-link {
   color: var(--body-bg);
   background-color: var(--filter-bg);
+}
+
+/*  */
+
+@media screen and (min-width: 768px) {
+  body {
+    padding: 4rem 10rem;
+  }
+
+  .filter-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .filter-header {
+    margin: 0;
+  }
+
+  .extension-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .extension-card {
+    margin: 0;
+  }
 }

@@ -60,7 +60,7 @@ function ExtentionCard() {
   }
 
   return (
-    <div className={`app-container ${lightTheme ? "light" : "dark"}`}>
+    <>
       <nav className="navbar">
         <div className="search-bar">
           <img src="./src/assets/images/logo.svg" alt="logo" className="logo" />
@@ -107,37 +107,38 @@ function ExtentionCard() {
           </div>
         </div>
       </nav>
+      <div className="extension-container">
+        {filteredList.map((extension) => (
+          <div key={extension.name} className="extension-card">
+            <div className="top-part">
+              <img src={`./src/${extension.logo}`} alt={extension.name} />
+              <div className="extension-body">
+                <h1 className="extension-header">{extension.name}</h1>
+                <p className="extension-description">{extension.description}</p>
+              </div>
+            </div>
 
-      {filteredList.map((extension) => (
-        <div key={extension.name} className="extension-card">
-          <div className="top-part">
-            <img src={`./src/${extension.logo}`} alt={extension.name} />
-            <div className="extension-body">
-              <h1 className="extension-header">{extension.name}</h1>
-              <p className="extension-description">{extension.description}</p>
+            <div className="bottom-part">
+              <button
+                className="btn remove-btn"
+                onClick={() => handleRemove(extension.name)}
+              >
+                Remove
+              </button>
+
+              <label className="switch">
+                <input
+                  type="checkbox"
+                  checked={extension.isActive}
+                  onChange={() => handleToggle(extension.name)}
+                />
+                <span className="slider" />
+              </label>
             </div>
           </div>
-
-          <div className="bottom-part">
-            <button
-              className="btn remove-btn"
-              onClick={() => handleRemove(extension.name)}
-            >
-              Remove
-            </button>
-
-            <label className="switch">
-              <input
-                type="checkbox"
-                checked={extension.isActive}
-                onChange={() => handleToggle(extension.name)}
-              />
-              <span className="slider" />
-            </label>
-          </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </>
   );
 }
 
