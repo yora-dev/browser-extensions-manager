@@ -33,7 +33,7 @@
   --card-header: hsl(227, 75%, 14%);
   --card-body: hsl(226, 25%, 17%);
   --border-color: hsl(0, 0%, 78%);
-  --search-bg: hsl(0, 0%, 78%);
+  --search-bg: hsl(0, 1%, 74%);
 
   --active-radio: hsl(3, 77%, 44%);
   --filter-bg: hsl(3, 71%, 56%);
@@ -154,6 +154,13 @@ input:checked + .slider:before {
   border: 1px solid var(--border-color);
   display: flex;
   align-items: center;
+  cursor: pointer;
+  transition: all 0.35s;
+}
+
+.remove-btn:hover {
+  color: var(--body-bg);
+  background-color: var(--filter-bg);
 }
 
 .search-bar {
@@ -200,6 +207,7 @@ input:checked + .slider:before {
   font-size: 2rem;
   background-color: var(--radio-bg);
   transition: all 0.35s;
+  cursor: pointer;
 }
 
 .active-link {
@@ -232,5 +240,9 @@ input:checked + .slider:before {
 
   .extension-card {
     margin: 0;
+  }
+
+  .top-part {
+    margin-bottom: 4rem;
   }
 }
