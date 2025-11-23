@@ -1,16 +1,76 @@
-# React + Vite
+# Frontend Mentor - Browser Extensions Manager UI Solution
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my solution to the [Browser Extensions Manager UI challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/browser-extension-manager-ui-yNZnOfsMAp).  
+The project helped me practice UI interactions, filtering logic, and responsive layouts using **React**.
 
-Currently, two official plugins are available:
+## Table of contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Overview
 
-## Expanding the ESLint configuration
+### The challenge
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Users should be able to:
+
+- Toggle extensions between active and inactive states
+- Filter active and inactive extensions
+- Remove extensions from the list
+- Select their color theme
+- View responsive layouts depending on screen size
+- See hover and focus states for all interactive elements
+
+### Screenshot
+
+./preview.jpg
+
+### My process
+
+## Built with
+
+- Flexbox
+- Mobile-first workflow
+- CSS Grid
+- React (useState, useEffect)
+- Vite
+- Styling: CSS Modules
+
+## What I learned
+
+- This project helped me strengthen my understanding of UI state management in React.
+
+## Continued development
+
+**Moving forward, I want to focus on:**
+
+- Improving component composition
+- Using Context API or Zustand for larger state
+- More advanced theme switching
+- Enhancing accessibility (keyboard navigation, ARIA attributes)
+
+### Useful resources
+
+- React Official Documentation
+
+## Author
+
+- Frontend Mentor - [@yora-dev](https://www.frontendmentor.io/profile/yora-dev)
+- GitHub - [@yora-dev](https://github.com/yora-dev)
+- Discord - [@yordanos01](https://discord.com/users/1417132259563147407)
+- Linkedin - [@yordanos01](https://www.linkedin.com/in/yordanos01?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
+
+## Acknowledgments
+
+- Big thanks to the Frontend Mentor community for feedback and suggestions. Also inspired by a few other Calculator App solutions to refine my approach.
